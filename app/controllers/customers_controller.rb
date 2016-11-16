@@ -2,6 +2,7 @@ class CustomersController < InheritedResources::Base
 
 
 
+
   private
 
     def customer_params
@@ -9,4 +10,3 @@ class CustomersController < InheritedResources::Base
     end
 
 end
-
