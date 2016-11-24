@@ -1,0 +1,2 @@
+class Aboutpage < ApplicationRecord
+end

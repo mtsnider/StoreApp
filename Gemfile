@@ -7,7 +7,7 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'bootswatch-rails'
 gem 'slim'
 gem 'kaminari'
-
+gem 'activeadmin_pagedown'
 gem 'carrierwave'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
