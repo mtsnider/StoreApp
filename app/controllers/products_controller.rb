@@ -13,9 +13,6 @@ def index
   @products = Product.order("name").page(params[:page]).per(6)
 end
 
-def adminproducts
-  @products = Product.all
-end
 
 
 
