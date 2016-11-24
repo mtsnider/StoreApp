@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-root to: 'products#index'
+get 'search' => 'products#search'
+get 'adminproducts' => 'product#adminproducts'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

@@ -1,7 +1,12 @@
-<div>
-  <p><%= product.name %></p>
-  <p><%= product.description %></p>
-  <p><%= product.price %></p>
-  <p><%= product.category %></p>
-  <p><%= link_to 'Show', product %></p>
-</div>
+ <div class="col-sm-4">
+   <div class="card">
+     <%= link_to href: product do %>
+       <%=image_tag(product.image, class: 'card-img-top img-fluid mx-auto d-block') %>
+     <% end %>
+     <div class="card-block">
+       <h3 class="card-title"><%=product.name%></h3>
+       <strong class="card-text"><%=product.price%></strong>
+       <h6 class="card-text"><span class="tag tag-default"><%=product.category.name%></span></h6>
+     </div>
+   </div>
+ </div>

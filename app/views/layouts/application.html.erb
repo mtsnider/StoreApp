@@ -9,8 +9,47 @@
   </head>
 
   <body>
+
+    <h1>REwild</h1>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Shop</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop By Categories</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">On Sale</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Recent</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Shelves</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Plant Holders</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Vases</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Pillows</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Custom</a></li>
+          </ul>
+        </li>
+        <li><a href="#">login</a></li>
+      </ul>
+    </div>
+
     <div class="container-fluid">
     <%= yield %>
   </div>
+
+
+
+
+    <nav class="nav nav-inline">
+      <a class="nav-link active" href="#">Home</a>
+      <a class="nav-link" href="#">Shop</a>
+      <a class="nav-link" href="#">About</a>
+      <a class="nav-link" href="#"><%= link_to 'Admin', adminproducts_path %></a>
+    </nav>
   </body>
 </html>

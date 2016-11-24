@@ -3,10 +3,12 @@ source 'https://rubygems.org'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
-
 gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'bootswatch-rails'
+gem 'slim'
+gem 'kaminari'
 
-gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'carrierwave'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'

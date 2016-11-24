@@ -27,9 +27,14 @@
   </div>
 
   <div class="field">
-    <%= f.label :category_id %>
-    <%= f.text_field :category_id %>
-  </div>
+  <%= f.label :category_id %><br />
+  <%= f.collection_select :category_id, Category.all, :id, :name %>
+</div>
+
+<div class="field">
+  Add an image....
+  <%= f.file_field :image %>
+</div>
 
   <div class="actions">
     <%= f.submit %>
