@@ -1,0 +1,15 @@
+<div class="col-sm-4">
+  <div class="card">
+    <%= link_to href: product do %>
+      <%=image_tag(product.image, class: 'card-img-top img-fluid mx-auto d-block') %>
+    <% end %>
+    <div class="card-block">
+      <h3 class="card-title"><%=product.name%></h3>
+      <strong class="card-text"><%=product.price%></strong>
+      <h6 class="card-text"><span class="tag tag-default"><%=product.category.name%></span></h6>
+      <td><%= link_to 'Show', product %></td>
+      <td><%= link_to 'Edit', product(product) %></td>
+      <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td></h6>
+    </div>
+  </div>
+</div>
