@@ -1,2 +1,3 @@
 class AboutpageController < ApplicationController
+
 end

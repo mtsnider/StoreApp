@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
 get 'search' => 'products#search'
 get 'adminproducts' => 'admin#adminproducts'
+get 'adminupload' => 'uploadedimage#_form'
+
+
+get "pages" => "pages#show"
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

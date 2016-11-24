@@ -1,5 +1,8 @@
 class UploadedimagesController < ApplicationController
-  def Uploadedimage_params
+
+
+
+  def uploadedimage_params
     params.require(:uploadedimage).permit(:image)
   end
 
