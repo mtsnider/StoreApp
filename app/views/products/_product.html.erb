@@ -4,7 +4,7 @@
        <%=image_tag(product.image, class: 'card-img-top img-fluid mx-auto d-block') %>
      <% end %>
      <div class="card-block">
-       <h3 class="card-title"><%=product.name%></h3>
+       <h3 class="card-title"><%= link_to product.name, product %></h3>
        <strong class="card-text"><%=product.price%></strong>
        <h6 class="card-text"><span class="tag tag-default"><%=product.category.name%></span></h6>
      </div>
