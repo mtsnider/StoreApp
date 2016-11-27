@@ -4,6 +4,7 @@ class Product < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+
   #def self.search(query)
   #    "name LIKE ? OR description LIKE ?", "%#{query}%"
   #  end
