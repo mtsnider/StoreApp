@@ -1,6 +1,6 @@
 class AdminuploadController < ApplicationController
 
-  def form
-    @Adminupload = Adminupload.all
+  def new
+    @adminupload = Adminupload.all
   end
 end

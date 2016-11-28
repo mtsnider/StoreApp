@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 get 'search' => 'products#search'
 get 'adminproducts' => 'admin#adminproducts'
 get 'about' => 'aboutpage#about'
-get 'adminform' => 'adminupload#form'
+get 'adminform' => 'adminupload#new'
 get 'home' => 'products#index'
 
 

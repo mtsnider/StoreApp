@@ -1,42 +1,18 @@
-<%= form_for(product) do |f| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<p id="notice"><%= notice %></p>
+  <div class="card-deck-wrapper">
+    <div class="card-deck">
+      <div class="row">
+        <%= form_for @adminupload |f| %>
 
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <div class="field">
+          Add an image....
+          <%= f.file_field :image %>
+        </div>
+
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <!-- <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-
-  <div class="field">
-  <%= f.label :category_id %><br />
-  <%= f.collection_select :category_id, Category.all, :id, :name %>
-</div> -->
-
-<div class="field">
-  Add an image....
-  <%= f.file_field :image %>
 </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
