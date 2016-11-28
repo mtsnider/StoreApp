@@ -6,6 +6,7 @@ get 'about' => 'aboutpage#about'
 get 'contact' => 'contactpage#contact'
 get 'adminform' => 'adminupload#new'
 get 'home' => 'products#index'
+get '' => 'products#index'
 
 
 get "pages" => "pages#show"
