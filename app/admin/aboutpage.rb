@@ -13,5 +13,12 @@ permit_params :title, :body
 #   permitted
 # end
 
+form do |f|
+  f.inputs do
+    f.input :body, :as => :pagedown_text
+    f.actions
+  end
+end
+
 
 end
