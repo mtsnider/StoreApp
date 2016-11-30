@@ -9,4 +9,3 @@ class OrdersController < InheritedResources::Base
     end
 
 end
-
