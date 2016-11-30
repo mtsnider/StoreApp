@@ -1,9 +1,10 @@
-#ActiveAdmin.register ProductsOnOrder do
+ActiveAdmin.register ProductOnOrder do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
- #permit_params :province_id, :customer_id
+# permit_params :list, :of, :attributes, :on, :model
+#
 # or
 #
 # permit_params do
@@ -13,4 +14,4 @@
 # end
 
 
-#end
+end
