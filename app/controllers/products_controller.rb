@@ -14,6 +14,7 @@ end
 
   def index
     @products = Product.all#order("name").page(params[:page]).per(6)
+     @order_item = current_order.order_items.new
 
     if params[:search]
       @products = Product.search(params[:search]).order("created_at DESC")
