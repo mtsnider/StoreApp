@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'product_on_order/create'
+
+  get 'product_on_order/update'
+
+  get 'product_on_order/destroy'
+
+  get 'carts/show'
+
 get 'search' => 'products#search'
 get 'adminproducts' => 'admin#adminproducts'
 get 'about' => 'aboutpage#about'

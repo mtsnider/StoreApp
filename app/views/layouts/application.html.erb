@@ -17,7 +17,8 @@
         <li><%= link_to 'Home', home_path %></li>
         <li><a href="#">Shop</a></li>
         <li><%= link_to 'About', about_path %></li>
-        <li class="dropdown">
+        <li><%= collection_select(:product, :category_id, Category.all, :id, :name) %></li>
+        <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop By Categories</a>
           <ul class="dropdown-menu">
             <li><a href="#">On Sale</a></li>
@@ -34,7 +35,7 @@
             <li role="separator" class="divider"></li>
             <li><a href="#">Custom</a></li>
           </ul>
-        </li>
+        </li> -->
         <li><a href="#">login</a></li>
         <li><%= link_to 'Contact', contact_path %></li>
         <li>
