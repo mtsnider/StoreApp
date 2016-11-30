@@ -1,16 +1,22 @@
 Rails.application.routes.draw do
 
+  get 'order_items/create'
+
+  get 'order_items/update'
+
+  get 'order_items/destroy'
+
   # get 'product_on_order/create'
   #
   # get 'product_on_order/update'
   #
   # get 'product_on_order/destroy'
-  # 
+  #
   # get 'carts/show'
 
   resources :products, only: [:index]
  resource :cart, only: [:show]
- resources :product_on_order, only: [:create, :update, :destroy]
+resources :order_items, only: [:create, :update, :destroy]
 
 get 'search' => 'products#search'
 get 'adminproducts' => 'admin#adminproducts'
