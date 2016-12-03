@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'carts/show'
+
   get 'cart/create'
 
   get 'cart/update'
