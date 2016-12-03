@@ -1,33 +1,21 @@
 class ProductsController < InheritedResources::Base
-
-  def sortByPrice
-    @products = Product.order(:price)
+  def paginated
+    @pageinatedpages = Product.order('name').page(params[:page]).per(6)
   end
-
-  def sortByCategory
-    @products = Product.order(:category_id)
-  end
-
-def paginated
- @pageinatedpages = Product.order("name").page(params[:page]).per(6)
-end
 
   def index
-    @products = Product.all#order("name").page(params[:page]).per(6)
-     @order_item = current_order.order_items.new
-
     if params[:search]
-      @products = Product.search(params[:search]).order("created_at DESC")
-
+      @products = Product.search(params[:search]).order('created_at DESC')
+      @order_item = current_order.order_items.new
     else
-      @products = Product.order("name").page(params[:page]).per(6)
+      @products = Product.order('id').page(params[:page]).per(6)
+      @order_item = current_order.order_items.new
     end
 end
 
+  private
 
-    private
-    def product_params
-      params.require(:product).permit(:name, :description, :price, :category_id, :image)
-    end
-
+  def product_params
+    params.require(:product).permit(:name, :description, :price, :category_id, :image)
+  end
 end

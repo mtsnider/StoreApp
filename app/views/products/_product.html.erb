@@ -1,18 +1,14 @@
-<%= form_for order_item, remote: true do |f| %>
+
  <div class="col-sm-4">
    <div class="card">
      <%= link_to href: product do %>
        <%=image_tag(product.image,  class: 'card-img-top img-fluid mx-auto d-block') %>
-     <% end %>
-     <div class="card-block">
+      <% end %>
+      <div class="card-block">
        <h3 class="card-title"><%= link_to product.name, product %></h3>
        <strong class="card-text"><%=number_to_currency(product.price)%></strong>
        <h6 class="card-text"><span class="tag tag-default"><%=product.category.name%></span></h6>
-       <div class="input-group-btn">
-            <%= f.hidden_field :product_id, value: product.id %>
-            <%= f.submit "Add to Cart", class: "btn btn-primary" %>
-        </div>
      </div>
+  
    </div>
  </div>
-<% end %>

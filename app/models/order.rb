@@ -3,16 +3,13 @@ class Order < ApplicationRecord
   belongs_to :province
    has_many :order_items
   validates :status, presence: true
+  before_save :update_subtotal
 
-  def subtotal
-   order_items.collect { |oi| oi.valid? ? (oi.quantity.toi * oi.unitprice.tof) : 0 }.sum
- end
-private
- def set_order_status
-   self.order_status_id = 1
- end
+   private
 
- def update_subtotal
-   self[:subtotal] = subtotal
- end
+
+     def update_subtotal
+       self[:subtotal] = subtotal
+     end
+
 end

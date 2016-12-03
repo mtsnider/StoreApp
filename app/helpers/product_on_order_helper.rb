@@ -1,2 +1,0 @@
-module ProductOnOrderHelper
-end

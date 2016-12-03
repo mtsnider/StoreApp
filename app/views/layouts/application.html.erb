@@ -4,8 +4,8 @@
     <title>Rewild</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true%>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
 
   <body>
@@ -18,25 +18,7 @@
         <li><a href="#">Shop</a></li>
         <li><%= link_to 'About', about_path %></li>
         <li><%= collection_select(:product, :category_id, Category.all, :id, :name) %></li>
-        <!-- <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop By Categories</a>
-          <ul class="dropdown-menu">
-            <li><a href="#">On Sale</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Recent</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Shelves</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Plant Holders</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Vases</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Pillows</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Custom</a></li>
-          </ul>
-        </li> -->
-        <li><a href="#">login</a></li>
+        <li><%= link_to 'Log in', sign_in_path %></li>
         <li><%= link_to 'Contact', contact_path %></li>
         <li>
           <%= form_tag(products_path, :method => "get", id: "search-form") do %>
@@ -44,10 +26,15 @@
           <%= submit_tag "Search" %>
           <% end %>
         </li>
+          <li><%= render 'layouts/cart_text' %></li>
       </ul>
-      <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
-    </div>
 
+
+    </div>
+    <div class="container">
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>
     <div class="container-fluid">
     <%= yield %>
   </div>

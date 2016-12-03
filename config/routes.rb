@@ -1,33 +1,33 @@
 Rails.application.routes.draw do
+  get 'cart/create'
 
-  get 'order_items/create'
+  get 'cart/update'
 
-  get 'order_items/update'
+  get 'cart/destory'
 
-  get 'order_items/destroy'
+  get 'cart/index'
 
-  # get 'product_on_order/create'
-  #
-  # get 'product_on_order/update'
-  #
-  # get 'product_on_order/destroy'
-  #
-  # get 'carts/show'
+  get 'cart/:id' => 'product_on_order#add_item', as: 'item_added'
+
+  post 'new_user', to: 'customer#create_new_user'
+  post 'new_order', to: 'customer#create_new_order'
+  get 'sign_in', to: 'user#sign_in'
 
   resources :products, only: [:index]
- resource :cart, only: [:show]
-resources :order_items, only: [:create, :update, :destroy]
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
 
-get 'search' => 'products#search'
-get 'adminproducts' => 'admin#adminproducts'
-get 'about' => 'aboutpage#about'
-get 'contact' => 'contactpage#contact'
-get 'adminform' => 'adminupload#new'
-get 'home' => 'products#index'
-get '' => 'products#index'
+  # resources :order_items, only: [:create, :update, :destroy]
 
+  get 'search' => 'products#search'
+  get 'adminproducts' => 'admin#adminproducts'
+  get 'about' => 'aboutpage#about'
+  get 'contact' => 'contactpage#contact'
+  get 'adminform' => 'adminupload#new'
+  get 'home' => 'products#index'
+  get '' => 'products#index'
 
-get "pages" => "pages#show"
+  get 'pages' => 'pages#show'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

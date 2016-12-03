@@ -1,0 +1,20 @@
+<h1>Sign up</h1>
+  <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
+    <p class="input_paragraph"> Username: <%= f.text_field :username %></p>
+    <p class="input_paragraph"> Password: <%= f.password_field :password %></p>
+  <% end %>
+ <%= fields_for(:customer) do |newuser| %>
+   <div class="field">
+     <p class="input_paragraph"> First Name: <%= newuser.text_field :first_name %> </p>
+     <p class="input_paragraph"> Last Name: <%= newuser.text_field :last_name %> </p>
+	 <p class="input_paragraph"> Email: <%= newuser.text_field :email %> </p>
+	 <p class="input_paragraph"> Address: <%= newuser.text_field :address %> </p>
+	 <p class="input_paragraph"> City: <%= newuser.text_field :city %> </p>
+	 <p class="input_paragraph"> Province: <%= newuser.select :province_id, options_for_select(Province.all.map{|province|[province.name, province.id]}) %> </p>
+   </div>
+ <% end %>
+ <p id="errors"> </p>
+ <div class="actions">
+   <button onclick="submit_new_user()"> Save</button>
+ </div>
+</div>
